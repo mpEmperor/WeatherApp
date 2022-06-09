@@ -9,7 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -23,11 +22,15 @@ public class CityController {
     Scene scene;
     Stage stage;
     public void enteredCity(ActionEvent event) throws IOException, InterruptedException {
+        String city = cityField.getText();
+        if (city.contains(" ")) {
+            city = city.replaceAll(" ", "_");
+        }
         // create a client
         var client = HttpClient.newHttpClient();
         // create a request
         var request = HttpRequest.newBuilder(
-                        URI.create("https://api.weatherapi.com/v1/forecast.json?key=0fb6820927be47a38d3154348220206&q="+cityField.getText()+"&days=1&aqi=no&alerts=no"))
+                        URI.create("https://api.weatherapi.com/v1/forecast.json?key=0fb6820927be47a38d3154348220206&q="+city+"&days=1&aqi=no&alerts=no"))
                 .header("accept", "application/json")
                 .build();
         // use the client to send the request

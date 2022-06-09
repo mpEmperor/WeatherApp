@@ -14,7 +14,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Main extends Application {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) {
         launch();
     }
     @Override
