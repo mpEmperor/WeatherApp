@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fse.MainController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fse.MainController">
    <children>
-      <Label fx:id="timeLabel" layoutX="14.0" layoutY="6.0" text="Time" />
-      <ImageView fx:id="imageView" fitHeight="64.0" fitWidth="64.0" layoutX="268.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="tempLabel" layoutX="256.0" layoutY="178.0" text="Temp">
+      <ImageView fx:id="bgImageView" fitHeight="600.0" fitWidth="335.0" layoutY="1.0" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+         <image>
+            <Image url="@../../../../../../../Downloads/Extremely%20modern%20weather%20(Instagram%20story)%20(1).jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="timeLabel" layoutX="7.0" layoutY="5.0" prefHeight="17.0" prefWidth="30.0" text="Time" />
+      <ImageView fx:id="imageView" fitHeight="98.0" fitWidth="113.0" layoutX="208.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="tempLabel" layoutX="56.0" layoutY="173.0" text="Temp" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="36.0" />
+            <Font name="Microsoft New Tai Lue" size="36.0" />
+         </font>
+      </Label>
+      <Circle fill="#1f93ff00" layoutX="129.0" layoutY="173.0" radius="5.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" />
+      <Label fx:id="location" layoutX="101.0" layoutY="505.0" prefHeight="43.0" prefWidth="150.0" text="Location" textFill="WHITE">
+         <font>
+            <Font name="Microsoft New Tai Lue" size="24.0" />
          </font>
       </Label>
       
