@@ -27,10 +27,8 @@ public class MainController {
     public static void setWeather(Weather weather) {
         MainController.weather = weather;
     }
-
     public void initialize() {
         if (weather.getCurrent().getIs_day() == 1) {
-
         }
         timeLabel.setText(weather.getLocation().getLocaltime().split(" ")[1]);
         tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
