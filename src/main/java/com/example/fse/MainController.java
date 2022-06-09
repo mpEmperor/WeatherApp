@@ -35,8 +35,4 @@ public class MainController {
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
         System.out.println(weather.getCurrent().getCondition().getIcon().substring(2));
     }
-
-    public void main(){
-
-    }
 }
