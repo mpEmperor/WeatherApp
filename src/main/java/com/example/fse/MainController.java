@@ -1,20 +1,16 @@
 package com.example.fse;
 
-import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.paint.Color;
 
 public class MainController {
     @FXML
     AnchorPane anchorPane;
     @FXML
-    Label tempLabel, timeLabel, Location;
+    Label tempLabel, timeLabel, locationLabel;
     @FXML
     ImageView imageView, bgImageView;
 
@@ -28,12 +24,18 @@ public class MainController {
         MainController.weather = weather;
     }
     public void initialize() {
+        String time = weather.getLocation().getLocaltime().split(" ")[1];
+        int hour = Integer.parseInt(time.split(":")[0]);
+        if (hour > 12) {
+            time = time.replace(String.valueOf(hour), String.valueOf(hour - 12));
+        }
+        System.out.println(hour);
         if (weather.getCurrent().getIs_day() == 1) {
         }
-        timeLabel.setText(weather.getLocation().getLocaltime().split(" ")[1]);
-        tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat(""));
+        timeLabel.setText(time);
+        tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
+        locationLabel.setText(weather.getLocation().getName());
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
-        bgImageView.setImage(new Image(String.valueOf(getClass().getResource("Extremely modern weather (Instagram story) (1).jpg"))));
-        System.out.println(weather.getCurrent().getCondition().getIcon().substring(2));
+        bgImageView.setImage(new Image(getClass().getResourceAsStream("Extremely modern weather (Instagram story) (1).jpg")));
     }
 }
