@@ -5,11 +5,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fse.CityController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fse.CityController">
    <children>
-      <TextField fx:id="cityField" layoutX="66.0" layoutY="101.0" />
-      <Button layoutX="224.0" layoutY="101.0" mnemonicParsing="false" text="Button" />
-      <Label layoutX="106.0" layoutY="83.0" text="Enter CIty " />
+      <TextField fx:id="cityField" layoutX="220.0" layoutY="188.0" onAction="#enteredCity" />
+      <Button layoutX="387.0" layoutY="189.0" mnemonicParsing="false" onAction="#enteredCity" text="Enter" />
+      <Label layoutX="273.0" layoutY="160.0" text="Enter City" />
    </children>
 </AnchorPane>

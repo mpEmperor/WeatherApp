@@ -14,13 +14,20 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Main extends Application {
+    private static String city;
+    public static String getCity() {
+        return city;
+    }
+    public static void setCity(String city) {
+        Main.city = city;
+    }
     public static void main(String[] args) throws IOException, InterruptedException {
         // create a client
         var client = HttpClient.newHttpClient();
 
         // create a request
         var request = HttpRequest.newBuilder(
-                        URI.create("https://api.weatherapi.com/v1/forecast.json?key=0fb6820927be47a38d3154348220206&q=Tecumseh&days=1&aqi=no&alerts=no"))
+                        URI.create("https://api.weatherapi.com/v1/forecast.json?key=0fb6820927be47a38d3154348220206&q="+city+"&days=1&aqi=no&alerts=no"))
                 .header("accept", "application/json")
                 .build();
 
@@ -34,7 +41,7 @@ public class Main extends Application {
     }
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("cityenter.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Weather");
         stage.setScene(scene);
