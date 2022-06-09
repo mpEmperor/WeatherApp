@@ -28,11 +28,17 @@ public class MainController {
         MainController.weather = weather;
     }
     public void initialize() {
+        String time = weather.getLocation().getLocaltime().split(" ")[1];
+        int hour = Integer.parseInt(time.split(":")[0]);
+        if (hour > 12) {
+            time = time.replace(String.valueOf(hour), String.valueOf(hour - 12));
+        }
+
+        System.out.println(hour);
         if (weather.getCurrent().getIs_day() == 1) {
         }
-        timeLabel.setText(weather.getLocation().getLocaltime().split(" ")[1]);
+        timeLabel.setText(time);
         tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
-        System.out.println(weather.getCurrent().getCondition().getIcon().substring(2));
     }
 }
