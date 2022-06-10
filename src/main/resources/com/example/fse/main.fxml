@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.fse.MainController">
-   <ImageView fx:id="bgImageView" fitHeight="600.0" fitWidth="335.0" layoutY="1.0" pickOnBounds="true" smooth="false"
-              AnchorPane.bottomAnchor="-107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-              AnchorPane.topAnchor="1.0">
-   </ImageView>
-   <ImageView fx:id="imageView" fitHeight="98.0" fitWidth="113.0" layoutX="111.0" layoutY="217.0" pickOnBounds="true"
-              preserveRatio="true"/>
-   <Label fx:id="tempLabel" layoutX="123.0" layoutY="173.0" text="Temp" textAlignment="CENTER" textFill="WHITE">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fse.MainController">
+   <ImageView fx:id="precipitationImage" fitHeight="120.0" fitWidth="120.0" layoutX="164.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fx:id="windImage" fitHeight="120.0" fitWidth="120.0" layoutX="51.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fx:id="bgImageView" fitHeight="600.0" fitWidth="335.0" layoutY="1.0" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+      <image>
+         <Image url="@Extremely%20modern%20weather%20(Instagram%20story)%20(1).jpg" />
+      </image></ImageView>
+   <ImageView fx:id="imageView" fitHeight="98.0" fitWidth="113.0" layoutX="111.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true" />
+   <Label fx:id="tempLabel" layoutX="122.0" layoutY="173.0" text="Temp" textAlignment="CENTER" textFill="WHITE">
       <font>
-         <Font name="Microsoft New Tai Lue" size="36.0"/>
+         <Font name="Microsoft New Tai Lue" size="36.0" />
       </font>
    </Label>
-   <Label fx:id="locationLabel" layoutX="123.0" layoutY="130.0" prefHeight="43.0" prefWidth="150.0" text="Location"
-          textAlignment="CENTER" textFill="WHITE">
+   <Label fx:id="locationLabel" layoutX="90.0" layoutY="130.0" prefHeight="43.0" prefWidth="154.0" text="Location" textAlignment="CENTER" textFill="WHITE">
       <font>
-         <Font name="Microsoft New Tai Lue" size="24.0"/>
+         <Font name="Microsoft Sans Serif" size="24.0" />
       </font>
    </Label>
-   <Label fx:id="timeLabel" layoutX="152.0" layoutY="122.0" text="Label" textFill="WHITE"/>
+   <Label fx:id="timeLabel" layoutX="153.0" layoutY="121.0" text="Label" textAlignment="CENTER" textFill="WHITE" />
+   <Label fx:id="windLabel" layoutX="97.0" layoutY="405.0" text="Wind" textAlignment="CENTER" textFill="#fff9f9" />
+   <Label fx:id="precipitationLabel" layoutX="190.0" layoutY="405.0" text="precipitation" textAlignment="CENTER" textFill="#f7f0f0">
+      <font>
+         <Font name="Microsoft Sans Serif" size="12.0" />
+      </font>
+   </Label>
 </AnchorPane>
