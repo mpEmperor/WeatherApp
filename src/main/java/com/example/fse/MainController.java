@@ -35,8 +35,10 @@ public class MainController {
         System.out.println(hour);
         if (weather.getCurrent().getIs_day() == 1) {
             bgImageView.setImage(new Image(getClass().getResourceAsStream("Extremely modern weather (Instagram story) (1).jpg")));
-        }
+        } else {
+            bgImageView.setImage(new Image(getClass().getResourceAsStream("Extremely modern weather (Instagram story) (2).jpg")));
 
+        }
         timeLabel.setText(time);
         tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
         locationLabel.setText(weather.getLocation().getName());

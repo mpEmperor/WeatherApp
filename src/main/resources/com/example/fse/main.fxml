@@ -5,22 +5,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fse.MainController">
-   <children>
-      <ImageView fx:id="bgImageView" fitHeight="600.0" fitWidth="335.0" layoutY="1.0" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
-      </ImageView>
-      <ImageView fx:id="imageView" fitHeight="98.0" fitWidth="113.0" layoutX="111.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="tempLabel" layoutX="123.0" layoutY="173.0" text="Temp" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Microsoft New Tai Lue" size="36.0" />
-         </font>
-      </Label>
-      <Label fx:id="locationLabel" layoutX="123.0" layoutY="130.0" prefHeight="43.0" prefWidth="150.0" text="Location" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Microsoft New Tai Lue" size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="timeLabel" layoutX="152.0" layoutY="122.0" text="Label" textFill="WHITE" />
-      
-   </children>
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.fse.MainController">
+   <ImageView fx:id="bgImageView" fitHeight="600.0" fitWidth="335.0" layoutY="1.0" pickOnBounds="true" smooth="false"
+              AnchorPane.bottomAnchor="-107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="1.0">
+   </ImageView>
+   <ImageView fx:id="imageView" fitHeight="98.0" fitWidth="113.0" layoutX="111.0" layoutY="217.0" pickOnBounds="true"
+              preserveRatio="true"/>
+   <Label fx:id="tempLabel" layoutX="123.0" layoutY="173.0" text="Temp" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="Microsoft New Tai Lue" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="locationLabel" layoutX="123.0" layoutY="130.0" prefHeight="43.0" prefWidth="150.0" text="Location"
+          textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="Microsoft New Tai Lue" size="24.0"/>
+      </font>
+   </Label>
+   <Label fx:id="timeLabel" layoutX="152.0" layoutY="122.0" text="Label" textFill="WHITE"/>
 </AnchorPane>
