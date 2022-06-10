@@ -9,7 +9,6 @@
    <children>
       <ImageView fx:id="bgImageView" fitHeight="600.0" fitWidth="335.0" layoutY="1.0" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
       </ImageView>
-      <Label fx:id="timeLabel" layoutX="154.0" layoutY="122.0" prefHeight="17.0" prefWidth="27.0" text="Time" textAlignment="CENTER" textFill="WHITE" />
       <ImageView fx:id="imageView" fitHeight="98.0" fitWidth="113.0" layoutX="111.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="tempLabel" layoutX="123.0" layoutY="173.0" text="Temp" textAlignment="CENTER" textFill="WHITE">
          <font>
@@ -21,6 +20,7 @@
             <Font name="Microsoft New Tai Lue" size="24.0" />
          </font>
       </Label>
+      <Label fx:id="timeLabel" layoutX="152.0" layoutY="122.0" text="Label" textFill="WHITE" />
       
    </children>
 </AnchorPane>
