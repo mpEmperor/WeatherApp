@@ -28,9 +28,13 @@ public class MainController {
         int hour = Integer.parseInt(time.split(":")[0]);
         if (hour > 12) {
             time = time.replace(String.valueOf(hour), String.valueOf(hour - 12));
+            time += " pm";
+        } else {
+            time += " am";
         }
         System.out.println(hour);
         if (weather.getCurrent().getIs_day() == 1) {
+
         }
         timeLabel.setText(time);
         tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
