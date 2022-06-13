@@ -23,5 +23,10 @@
             <Font name="Microsoft Sans Serif" size="24.0" />
          </font>
       </Label>
+      <Label fx:id="invalidLabel" layoutX="104.0" layoutY="300.0" text="Invalid City" textFill="RED" visible="false">
+         <font>
+            <Font name="Microsoft Sans Serif" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

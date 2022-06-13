@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -18,6 +19,8 @@ import java.net.http.HttpResponse;
 public class CityController {
     @FXML
     TextField cityField;
+    @FXML
+    Label invalidLabel;
     Parent root;
     Scene scene;
     Stage stage;
@@ -37,10 +40,14 @@ public class CityController {
         var response = client.send(request, HttpResponse.BodyHandlers.ofString());
         Weather weather = new Gson().fromJson(response.body(), Weather.class);
         MainController.setWeather(weather);
-        root = FXMLLoader.load(getClass().getResource("main.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        try {
+            root = FXMLLoader.load(getClass().getResource("main.fxml"));
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            invalidLabel.setVisible(true);
+        }
     }
 }
