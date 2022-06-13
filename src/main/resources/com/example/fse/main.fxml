@@ -7,10 +7,13 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fse.MainController">
-   <ImageView fx:id="precipitationImage" fitHeight="120.0" fitWidth="120.0" layoutX="164.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
-   <ImageView fx:id="windImage" fitHeight="120.0" fitWidth="120.0" layoutX="51.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" />
-   <ImageView fx:id="bgImageView" fitHeight="600.0" fitWidth="335.0" layoutY="1.0" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0"/>
+   <ImageView fx:id="bgImageView" fitHeight="600.0" fitWidth="335.0" layoutY="1.0" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-107.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+      <image>
+         <Image url="@Extremely%20modern%20weather%20(Instagram%20story)%20(1).jpg" />
+      </image></ImageView>
    <ImageView fx:id="imageView" fitHeight="98.0" fitWidth="113.0" layoutX="111.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fx:id="windImage" fitHeight="100.0" fitWidth="100.0" layoutX="50.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fx:id="precipitationImage" fitHeight="100.0" fitWidth="100.0" layoutX="174.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" />
    <Label fx:id="tempLabel" layoutX="122.0" layoutY="173.0" text="Temp" textAlignment="CENTER" textFill="WHITE">
       <font>
          <Font name="Microsoft Sans Serif" size="36.0" />
@@ -22,11 +25,11 @@
       </font>
    </Label>
    <Label fx:id="timeLabel" layoutX="153.0" layoutY="121.0" text="Label" textAlignment="CENTER" textFill="WHITE" />
-   <Label fx:id="windLabel" layoutX="91.0" layoutY="403.0" text="Wind" textAlignment="CENTER" textFill="#fff9f9">
+   <Label fx:id="windLabel" layoutX="79.0" layoutY="333.0" text="Wind" textAlignment="CENTER" textFill="#fff9f9">
       <font>
          <Font size="18.0" />
       </font></Label>
-   <Label fx:id="precipitationLabel" layoutX="175.0" layoutY="404.0" text="precipitation" textAlignment="CENTER" textFill="#f7f0f0">
+   <Label fx:id="precipitationLabel" layoutX="215.0" layoutY="360.0" prefHeight="22.0" prefWidth="42.0" text="precipitation" textAlignment="CENTER" textFill="#f7f0f0">
       <font>
          <Font name="Microsoft Sans Serif" size="18.0" />
       </font>

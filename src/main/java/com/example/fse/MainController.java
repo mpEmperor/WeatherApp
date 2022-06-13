@@ -12,7 +12,7 @@ public class MainController {
     @FXML
     Label tempLabel, timeLabel, locationLabel, windLabel, precipitationLabel;
     @FXML
-    ImageView imageView, bgImageView;
+    ImageView imageView, bgImageView, windImage, precipitationImage;
 
 
     private static Weather weather;
@@ -41,6 +41,8 @@ public class MainController {
             bgImageView.setImage(new Image(getClass().getResourceAsStream("Extremely modern weather (Instagram story) (2).jpg")));
         }
         windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " km/h");
+        windImage.setImage(new Image(getClass().getResourceAsStream("wind.png")));
+        precipitationImage.setImage(new Image("https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather07-512.png"));
         precipitationLabel.setText(String.valueOf(weather.getCurrent().getPrecip_mm()) + " mm");
         timeLabel.setText(time);
         tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
