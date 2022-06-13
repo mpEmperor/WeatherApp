@@ -36,8 +36,19 @@ public class MainController {
             time += " am";
         }
         if (weather.getCurrent().getIs_day() == 1) {
-            bgImageView.setImage(new Image(getClass().getResourceAsStream("Extremely modern weather (Instagram story) (1).jpg")));
+            if (weather.getCurrent().getCondition().getText().equals("Sunny")) {
+                bgImageView.setImage(new Image(getClass().getResourceAsStream("Extremely modern weather (Instagram story) (1).jpg")));
+            } else if (weather.getCurrent().getCondition().getText().contains("rain")) {
+                bgImageView.setImage(new Image(getClass().getResourceAsStream("rainyWeatherDay.jpg")));
+            } else if (weather.getCurrent().getCondition().getText().contains("snow")) {
+                bgImageView.setImage(new Image(getClass().getResourceAsStream("snowyWeatherDay.jpg")));
+            }
         } else {
+            if (weather.getCurrent().getCondition().getText().contains("rain")) {
+                bgImageView.setImage(new Image(getClass().getResourceAsStream("rainyWeatherNight.jpg")));
+            } else if (weather.getCurrent().getCondition().getText().contains("snow")) {
+                bgImageView.setImage(new Image(getClass().getResourceAsStream("snowyWeatherNight.jpg")));
+            }
             bgImageView.setImage(new Image(getClass().getResourceAsStream("Extremely modern weather (Instagram story) (2).jpg")));
         }
         windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " km/h");
