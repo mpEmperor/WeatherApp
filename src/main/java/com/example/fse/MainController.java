@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -23,7 +24,7 @@ public class MainController {
     @FXML
     ImageView imageView, bgImageView, windImage, humidityImage1, humidityImage2, pressureImage;
     @FXML
-    Button changeCButton, changeFButton;
+    CheckBox changeBox;
     Stage stage;
     Scene scene;
     Parent root;
@@ -93,22 +94,15 @@ public class MainController {
 
     }
     public void changeToF() {
-        changeCButton.setDisable(false);
-        changeCButton.setVisible(true);
-        changeFButton.setVisible(false);
-        changeFButton.setDisable(true);
-        tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_f()).concat("°F"));
-        feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_f() + "°F");
-        windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_mph() + " mph");
-    }
-    public void changeToC() {
-        changeFButton.setDisable(false);
-        changeCButton.setDisable(true);
-        changeFButton.setVisible(true);
-        changeCButton.setVisible(false);
-        tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
-        feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_c() + "°C");
-        windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " km/h");
+        if (changeBox.isSelected()) {
+            tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_f()).concat("°F"));
+            feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_f() + "°F");
+            windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_mph() + " mph");
+        } else {
+            tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
+            feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_c() + "°C");
+            windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " kph");
+        }
     }
     public void chooseCity(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("cityenter.fxml"));
