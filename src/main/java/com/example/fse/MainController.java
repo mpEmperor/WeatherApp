@@ -11,9 +11,9 @@ public class MainController {
     @FXML
     AnchorPane anchorPane;
     @FXML
-    Label tempLabel, timeLabel, locationLabel,countryLabel, windLabel,conditionLabel,LastUpdatedLabel,feelsLikeLabel;
+    Label tempLabel, timeLabel, locationLabel,countryLabel, windLabel, humidityLabel, pressureLabel, conditionLabel,LastUpdatedLabel,feelsLikeLabel;
     @FXML
-    ImageView imageView, bgImageView, windImage;
+    ImageView imageView, bgImageView, windImage, humidityImage1, humidityImage2, pressureImage;
     @FXML
     Button changeCButton, changeFButton;
 
@@ -58,16 +58,28 @@ public class MainController {
         }
         windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " km/h");
         windImage.setImage(new Image(getClass().getResourceAsStream("wind.png")));
-        //precipitationImage.setImage(new Image("https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather07-512.png"));
-        //precipitationLabel.setText(String.valueOf(weather.getCurrent().getPrecip_mm()) + " mm");
+
+        humidityImage1.setImage(new Image(getClass().getResourceAsStream("humidity1.png")));
+        humidityImage2.setImage(new Image(getClass().getResourceAsStream("humidity2.png")));
+        humidityLabel.setText(String.valueOf(weather.getCurrent().getHumidity()) + "%");
+
+        pressureLabel.setText(String.valueOf(weather.getCurrent().getPressure_in() + " inHg"));
+        pressureImage.setImage(new Image(getClass().getResourceAsStream("pressure.png")));
+
         timeLabel.setText(time);
+
         tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
+
         locationLabel.setText(weather.getLocation().getName());
         countryLabel.setText(weather.getLocation().getCountry());
         conditionLabel.setText(weather.getCurrent().getCondition().getText());
+
         LastUpdatedLabel.setText("Last Updated: " + weather.getCurrent().getLast_updated());
+
         feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_c() + "°C");
+
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
+
         System.out.println("I love you");
     }
     public void changeToF() {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -7,10 +8,8 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fse.MainController">
-   <ImageView fx:id="bgImageView" fitHeight="606.0" fitWidth="900.0" layoutY="-5.0" pickOnBounds="true" smooth="false"
-              AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-              AnchorPane.topAnchor="-5.0">
-      <Image url="@SunnyDay.jpg"/>
+   <ImageView fx:id="bgImageVIew" fitHeight="606.0" fitWidth="900.0" layoutY="-5.0" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-5.0">
+      <Image url="@SunnyDay.jpg" />
    </ImageView>
    <ImageView fx:id="imageView" fitHeight="80.0" fitWidth="80.0" layoutX="261.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" />
    <ImageView fx:id="windImage" fitHeight="40.0" fitWidth="65.0" layoutX="409.0" layoutY="89.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
@@ -32,14 +31,15 @@
       <font>
          <Font size="18.0" />
       </font></Label>
-   <Label fx:id="humidityLabel" alignment="CENTER" layoutX="533.0" layoutY="71.0" prefHeight="22.0" prefWidth="71.0" text="humidity" textAlignment="CENTER" textFill="#f7f0f0">
+   <Label fx:id="humidityLabel" alignment="CENTER" layoutX="537.0" layoutY="63.0" prefHeight="22.0" prefWidth="71.0" text="humidity" textAlignment="CENTER" textFill="#f7f0f0">
       <font>
          <Font name="Microsoft Sans Serif" size="18.0" />
       </font>
    </Label>
-   <ImageView fx:id="humidityImage" fitHeight="40.0" fitWidth="65.0" layoutX="537.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" />
-   <ImageView fx:id="windImage11" fitHeight="69.0" fitWidth="71.0" layoutX="667.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
-   <ImageView fx:id="windImage111" fitHeight="69.0" fitWidth="71.0" layoutX="800.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fx:id="humidityImage1" fitHeight="73.0" fitWidth="71.0" layoutX="525.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@humidity1.png" />
+      </image></ImageView>
    <Label fx:id="countryLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="158.0" prefHeight="42.0" prefWidth="282.0" text="Country" textAlignment="CENTER" textFill="WHITE">
       <font>
          <Font name="Microsoft Sans Serif" size="36.0" />
@@ -48,4 +48,21 @@
    <Label fx:id="conditionLabel" alignment="CENTER" layoutX="106.0" layoutY="358.0" prefHeight="18.0" prefWidth="200.0" text="Condition" textAlignment="CENTER" textFill="WHITE" />
    <Label fx:id="LastUpdatedLabel" alignment="CENTER" layoutX="101.0" layoutY="490.0" prefHeight="18.0" prefWidth="200.0" text="LastUpdated" textAlignment="CENTER" textFill="WHITE" />
    <Label fx:id="feelsLikeLabel" alignment="CENTER" layoutX="106.0" layoutY="340.0" prefHeight="18.0" prefWidth="200.0" text="feelsLike" textAlignment="CENTER" textFill="WHITE" />
+   <Button fx:id="changeCButton" disable="true" layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#changeToC" text="Metric" visible="false" />
+   <Button fx:id="changeFButton" layoutX="15.0" layoutY="564.0" mnemonicParsing="false" onAction="#changeToF" text="Imperial" />
+   <ImageView fx:id="humidityImage2" fitHeight="36.0" fitWidth="24.0" layoutX="571.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@humidity2.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="pressureImage" fitHeight="51.0" fitWidth="54.0" layoutX="670.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../../../../../OneDrive/Desktop/pressure.png" />
+      </image>
+   </ImageView>
+   <Label fx:id="pressureLabel" alignment="CENTER" layoutX="670.0" layoutY="61.0" text="Pressure" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font name="Microsoft Sans Serif" size="14.0" />
+      </font>
+   </Label>
 </AnchorPane>
