@@ -3,7 +3,6 @@ package com.example.fse;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -15,6 +14,8 @@ public class MainController {
     Label tempLabel, timeLabel, locationLabel,countryLabel, windLabel,conditionLabel,LastUpdatedLabel,feelsLikeLabel;
     @FXML
     ImageView imageView, bgImageView, windImage;
+    @FXML
+    Button changeCButton, changeFButton;
 
 
     private static Weather weather;
@@ -28,8 +29,6 @@ public class MainController {
         MainController.weather = weather;
     }
     public void initialize() {
-
-
         String time = weather.getLocation().getLocaltime().split(" ")[1];
         int hour = Integer.parseInt(time.split(":")[0]);
         if (hour > 12) {
@@ -40,7 +39,6 @@ public class MainController {
         } else {
             time += " am";
         }
-
         //Background
         if (weather.getCurrent().getIs_day() == 1) {
             if (weather.getCurrent().getCondition().getText().equals("Sunny")) {
@@ -58,8 +56,6 @@ public class MainController {
             }
             bgImageView.setImage(new Image(getClass().getResourceAsStream("SunnyNight.jpg")));
         }
-
-
         windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " km/h");
         windImage.setImage(new Image(getClass().getResourceAsStream("wind.png")));
         //precipitationImage.setImage(new Image("https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather07-512.png"));
@@ -72,6 +68,24 @@ public class MainController {
         LastUpdatedLabel.setText("Last Updated: " + weather.getCurrent().getLast_updated());
         feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_c() + "°C");
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
-
     }
+    public void changeToF() {
+        changeCButton.setDisable(false);
+        changeCButton.setVisible(true);
+        changeFButton.setVisible(false);
+        changeFButton.setDisable(true);
+        tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_f()).concat("°F"));
+        feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_f() + "°F");
+        windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_mph() + " mph");
+    }
+    public void changeToC() {
+        changeFButton.setDisable(false);
+        changeCButton.setDisable(true);
+        changeFButton.setVisible(true);
+        changeCButton.setVisible(false);
+        tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
+        feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_c() + "°C");
+        windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " km/h");
+    }
+
 }
