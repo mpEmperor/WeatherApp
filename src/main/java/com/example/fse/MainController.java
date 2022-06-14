@@ -112,8 +112,8 @@ public class MainController {
     }
     public void chooseCity(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("cityenter.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
