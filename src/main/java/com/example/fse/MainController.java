@@ -37,19 +37,19 @@ public class MainController {
         }
         if (weather.getCurrent().getIs_day() == 1) {
             if (weather.getCurrent().getCondition().getText().equals("Sunny")) {
-                bgImageView.setImage(new Image(getClass().getResourceAsStream("Extremely modern weather (Instagram story) (1).jpg")));
+                bgImageView.setImage(new Image(getClass().getResourceAsStream("SunnyDay.jpg")));
             } else if (weather.getCurrent().getCondition().getText().contains("rain")) {
-                bgImageView.setImage(new Image(getClass().getResourceAsStream("rainyWeatherDay.jpg")));
+                bgImageView.setImage(new Image(getClass().getResourceAsStream("RainingDay.jpg")));
             } else if (weather.getCurrent().getCondition().getText().contains("snow")) {
-                bgImageView.setImage(new Image(getClass().getResourceAsStream("snowyWeatherDay.jpg")));
+                bgImageView.setImage(new Image(getClass().getResourceAsStream("SnowyDay.jpg")));
             }
         } else {
             if (weather.getCurrent().getCondition().getText().contains("rain")) {
-                bgImageView.setImage(new Image(getClass().getResourceAsStream("rainyWeatherNight.jpg")));
+                bgImageView.setImage(new Image(getClass().getResourceAsStream("RainingNight.jpg")));
             } else if (weather.getCurrent().getCondition().getText().contains("snow")) {
-                bgImageView.setImage(new Image(getClass().getResourceAsStream("snowyWeatherNight.jpg")));
+                bgImageView.setImage(new Image(getClass().getResourceAsStream("SnowyNight.jpg")));
             }
-            bgImageView.setImage(new Image(getClass().getResourceAsStream("Extremely modern weather (Instagram story) (2).jpg")));
+            bgImageView.setImage(new Image(getClass().getResourceAsStream("SunnyNight.jpg")));
         }
         windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " km/h");
         windImage.setImage(new Image(getClass().getResourceAsStream("wind.png")));
@@ -58,6 +58,7 @@ public class MainController {
         timeLabel.setText(time);
         tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
         locationLabel.setText(weather.getLocation().getName());
+        locationLabel.g
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
     }
 }
