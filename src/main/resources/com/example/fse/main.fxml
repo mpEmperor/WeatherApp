@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fse.MainController">
-   <ImageView fx:id="bgImageVIew" fitHeight="606.0" fitWidth="900.0" layoutY="-5.0" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-5.0">
+   <ImageView fx:id="bgImageView" fitHeight="606.0" fitWidth="900.0" layoutY="-5.0" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-5.0">
       <Image url="@SunnyDay.jpg" />
    </ImageView>
    <ImageView fx:id="imageView" fitHeight="80.0" fitWidth="80.0" layoutX="261.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" />
