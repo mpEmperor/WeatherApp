@@ -58,7 +58,6 @@ public class MainController {
         timeLabel.setText(time);
         tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
         locationLabel.setText(weather.getLocation().getName());
-        locationLabel.g
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
     }
 }
