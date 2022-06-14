@@ -1,11 +1,19 @@
 package com.example.fse;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MainController {
     @FXML
@@ -16,6 +24,9 @@ public class MainController {
     ImageView imageView, bgImageView, windImage, humidityImage1, humidityImage2, pressureImage;
     @FXML
     Button changeCButton, changeFButton;
+    Stage stage;
+    Scene scene;
+    Parent root;
 
 
     private static Weather weather;
@@ -61,9 +72,9 @@ public class MainController {
 
         humidityImage1.setImage(new Image(getClass().getResourceAsStream("humidity1.png")));
         humidityImage2.setImage(new Image(getClass().getResourceAsStream("humidity2.png")));
-        humidityLabel.setText(String.valueOf(weather.getCurrent().getHumidity()) + "%");
+        humidityLabel.setText((weather.getCurrent().getHumidity()) + "%");
 
-        pressureLabel.setText(String.valueOf(weather.getCurrent().getPressure_in() + " inHg"));
+        pressureLabel.setText((weather.getCurrent().getPressure_in() + " inHg"));
         pressureImage.setImage(new Image(getClass().getResourceAsStream("pressure.png")));
 
         timeLabel.setText(time);
@@ -80,7 +91,6 @@ public class MainController {
 
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
 
-        System.out.println("I love you");
     }
     public void changeToF() {
         changeCButton.setDisable(false);
@@ -99,6 +109,13 @@ public class MainController {
         tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
         feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_c() + "°C");
         windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " km/h");
+    }
+    public void chooseCity(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("cityenter.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
