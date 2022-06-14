@@ -68,6 +68,7 @@ public class MainController {
         LastUpdatedLabel.setText("Last Updated: " + weather.getCurrent().getLast_updated());
         feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_c() + "°C");
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
+        System.out.println("I love you");
     }
     public void changeToF() {
         changeCButton.setDisable(false);
