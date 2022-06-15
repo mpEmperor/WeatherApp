@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -55,32 +54,32 @@ public class MainController {
         //Background
         if (weather.getCurrent().getIs_day() == 1) {
             if (weather.getCurrent().getCondition().getText().equals("Sunny")) {
-                bgImageView.setImage(new Image(getClass().getResourceAsStream("SunnyDay.jpg")));
+                bgImageView.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("SunnyDay.jpg"))));
             } else if (weather.getCurrent().getCondition().getText().contains("rain")) {
-                bgImageView.setImage(new Image(getClass().getResourceAsStream("RainingDay.jpg")));
+                bgImageView.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("RainingDay.jpg"))));
             } else if (weather.getCurrent().getCondition().getText().contains("snow")) {
-                bgImageView.setImage(new Image(getClass().getResourceAsStream("SnowyDay.jpg")));
+                bgImageView.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("SnowyDay.jpg"))));
             }
         } else {
             if (weather.getCurrent().getCondition().getText().contains("rain")) {
-                bgImageView.setImage(new Image(getClass().getResourceAsStream("RainingNight.jpg")));
+                bgImageView.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("RainingNight.jpg"))));
             } else if (weather.getCurrent().getCondition().getText().contains("snow")) {
-                bgImageView.setImage(new Image(getClass().getResourceAsStream("SnowyNight.jpg")));
+                bgImageView.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("SnowyNight.jpg"))));
             }
-            bgImageView.setImage(new Image(getClass().getResourceAsStream("SunnyNight.jpg")));
+            bgImageView.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("SunnyNight.jpg"))));
         }
 
         windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " km/h");
-        windImage.setImage(new Image(getClass().getResourceAsStream("wind.png")));
+        windImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("wind.png"))));
 
-        humidityImage1.setImage(new Image(getClass().getResourceAsStream("humidity1.png")));
-        humidityImage2.setImage(new Image(getClass().getResourceAsStream("humidity2.png")));
+        humidityImage1.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("humidity1.png"))));
+        humidityImage2.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("humidity2.png"))));
         humidityLabel.setText((weather.getCurrent().getHumidity()) + "%");
 
         pressureLabel.setText((weather.getCurrent().getPressure_in() + " inHg"));
-        pressureImage.setImage(new Image(getClass().getResourceAsStream("pressure.png")));
+        pressureImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("pressure.png"))));
 
-        uvImage.setImage(new Image(getClass().getResourceAsStream("UV.png")));
+        uvImage.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream("UV.png"))));
         uvLabel.setText("" + weather.getCurrent().getUv());
 
         timeLabel.setText(time);

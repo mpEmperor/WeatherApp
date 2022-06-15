@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Forecast {
     private ArrayList<ForecastDay> forecastday;
 
+
     public ArrayList<ForecastDay> getForecastday() {
         return forecastday;
     }
