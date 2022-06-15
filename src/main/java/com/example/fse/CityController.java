@@ -15,6 +15,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Objects;
 
 public class CityController {
     @FXML
@@ -40,14 +41,14 @@ public class CityController {
         var response = client.send(request, HttpResponse.BodyHandlers.ofString());
         Weather weather = new Gson().fromJson(response.body(), Weather.class);
         MainController.setWeather(weather);
-        try {
+       // try {
             root = FXMLLoader.load(getClass().getResource("main.fxml"));
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-        } catch (Exception e) {
-            invalidLabel.setVisible(true);
-        }
+      //  } catch (Exception e) {
+        //    invalidLabel.setVisible(true);
+       // }
     }
 }

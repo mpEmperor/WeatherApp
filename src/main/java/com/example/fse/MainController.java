@@ -15,14 +15,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class MainController {
     @FXML
     AnchorPane anchorPane;
     @FXML
-    Label tempLabel, timeLabel, locationLabel,countryLabel, windLabel, humidityLabel, pressureLabel, conditionLabel,LastUpdatedLabel,feelsLikeLabel;
+    Label tempLabel, timeLabel, locationLabel,countryLabel, windLabel, humidityLabel, pressureLabel,uvLabel, conditionLabel,LastUpdatedLabel,feelsLikeLabel;
     @FXML
-    ImageView imageView, bgImageView, windImage, humidityImage1, humidityImage2, pressureImage;
+    ImageView imageView, bgImageView, windImage, humidityImage1, humidityImage2, pressureImage, uvImage;
     @FXML
     CheckBox changeBox;
     Stage stage;
@@ -68,6 +69,7 @@ public class MainController {
             }
             bgImageView.setImage(new Image(getClass().getResourceAsStream("SunnyNight.jpg")));
         }
+
         windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " km/h");
         windImage.setImage(new Image(getClass().getResourceAsStream("wind.png")));
 
@@ -77,6 +79,9 @@ public class MainController {
 
         pressureLabel.setText((weather.getCurrent().getPressure_in() + " inHg"));
         pressureImage.setImage(new Image(getClass().getResourceAsStream("pressure.png")));
+
+        uvImage.setImage(new Image(getClass().getResourceAsStream("UV.png")));
+        uvLabel.setText("" + weather.getCurrent().getUv());
 
         timeLabel.setText(time);
 
@@ -105,7 +110,7 @@ public class MainController {
         }
     }
     public void chooseCity(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("cityenter.fxml"));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("cityenter.fxml")));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

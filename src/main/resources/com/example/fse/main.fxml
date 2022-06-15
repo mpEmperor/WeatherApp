@@ -63,4 +63,14 @@
    </Label>
    <Button layoutX="801.0" layoutY="564.0" mnemonicParsing="false" onAction="#chooseCity" text="Change City" />
    <CheckBox fx:id="changeBox" layoutX="20.0" layoutY="568.0" mnemonicParsing="false" onAction="#changeToF" text="Imperial" />
+   <Label fx:id="uvLabel" alignment="CENTER" layoutX="807.0" layoutY="63.0" prefHeight="22.0" prefWidth="54.0" text="UV" textFill="WHITE">
+      <font>
+         <Font name="Microsoft Sans Serif" size="18.0" />
+      </font>
+   </Label>
+   <ImageView fx:id="uvImage" fitHeight="71.0" fitWidth="79.0" layoutX="795.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../../../../../OneDrive/Desktop/UV.png" />
+      </image>
+   </ImageView>
 </AnchorPane>
