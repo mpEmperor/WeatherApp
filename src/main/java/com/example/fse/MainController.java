@@ -101,6 +101,7 @@ public class MainController {
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
 
 
+        System.out.println(weather.getForecast().getAverageCelsius());
     }
     public void changeToF() {
         if (changeBox.isSelected()) {
