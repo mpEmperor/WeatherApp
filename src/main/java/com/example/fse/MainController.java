@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -44,6 +45,12 @@ public class MainController {
         MainController.weather = weather;
     }
     public void initialize() {
+        /*XYChart.Series series = new XYChart.Series();
+        for (int i = 0; i < weather.getForecast().precipTrendMM().size(); i ++) {
+            series.getData().add(new XYChart.Data<>(Math.round(weather.getForecast().precipTrendMM().get(i)), i));
+        }
+        trendGraph.getData().add(series);*/
+
         String time = weather.getLocation().getLocaltime().split(" ")[1];
         int hour = Integer.parseInt(time.split(":")[0]);
         if (hour > 12) {
@@ -325,10 +332,6 @@ public class MainController {
         temp23Label1.setText("" + weather.getForecast().getForecastday().get(0).getHour().get(22).getTemp_c() + "°C");
         temp24Label1.setText("" + weather.getForecast().getForecastday().get(0).getHour().get(23).getTemp_c() + "°C");
     }
-    public void trendGraph() {
-        for (int i = 0; i < weather.getForecast().precipTrendMM().size(); i ++) {
-            trendGraph.getData().add(weather.getForecast().precipTrendMM().get(i));
-        }
-    }
+
 
 }
