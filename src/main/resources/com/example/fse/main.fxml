@@ -882,7 +882,7 @@
                <children>
                   <LineChart fx:id="trendGraph" layoutX="88.0" layoutY="25.0" prefHeight="248.0" prefWidth="310.0">
                      <xAxis>
-                        <CategoryAxis side="BOTTOM"/>
+                        <NumberAxis side="BOTTOM"/>
                      </xAxis>
                      <yAxis>
                         <NumberAxis side="LEFT"/>

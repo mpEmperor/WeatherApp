@@ -45,11 +45,11 @@ public class MainController {
         MainController.weather = weather;
     }
     public void initialize() {
-        /*XYChart.Series series = new XYChart.Series();
+        XYChart.Series<Number, Number> series = new XYChart.Series();
         for (int i = 0; i < weather.getForecast().precipTrendMM().size(); i ++) {
-            series.getData().add(new XYChart.Data<>(Math.round(weather.getForecast().precipTrendMM().get(i)), i));
+            series.getData().add(new XYChart.Data<>(i, Math.round(weather.getForecast().precipTrendMM().get(i))));
         }
-        trendGraph.getData().add(series);*/
+        trendGraph.getData().add(series);
 
         String time = weather.getLocation().getLocaltime().split(" ")[1];
         int hour = Integer.parseInt(time.split(":")[0]);
