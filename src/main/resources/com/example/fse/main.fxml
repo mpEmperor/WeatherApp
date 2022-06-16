@@ -81,7 +81,7 @@
          <Image url="@../../../../../../../OneDrive/Desktop/UV.png" />
       </image>
    </ImageView>
-   <TabPane layoutX="394.0" layoutY="206.0" prefHeight="329.0" prefWidth="499.0" style="-fx-background-color: lightblue;" tabClosingPolicy="UNAVAILABLE">
+   <TabPane layoutX="394.0" layoutY="206.0" prefHeight="329.0" prefWidth="499.0" style="-fx-background-color: lightgray;" tabClosingPolicy="UNAVAILABLE">
      <tabs>
        <Tab fx:id="HourlyTab" text="Next Day Hourly">
          <content>
