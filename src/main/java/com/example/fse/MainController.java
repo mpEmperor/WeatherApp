@@ -46,6 +46,7 @@ public class MainController {
     }
     public void initialize() {
         XYChart.Series<Number, Number> series = new XYChart.Series();
+        series.setName("Precipitation");
         for (int i = 0; i < weather.getForecast().precipTrendMM().size(); i ++) {
             series.getData().add(new XYChart.Data<>(i, Math.round(weather.getForecast().precipTrendMM().get(i))));
         }
