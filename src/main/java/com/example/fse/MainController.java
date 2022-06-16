@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -25,6 +26,8 @@ public class MainController {
     ImageView imageView, bgImageView, windImage, humidityImage1, humidityImage2, pressureImage, uvImage, hour1Image, hour2Image, hour3Image, hour4Image, hour5Image, hour6Image, hour7Image, hour8Image, hour9Image, hour10Image, hour11Image, hour12Image, hour13Image, hour14Image, hour15Image, hour16Image, hour17Image, hour18Image, hour19Image, hour20Image, hour21Image, hour22Image, hour23Image, hour24Image, hour1Image1, hour2Image1, hour3Image1, hour4Image1, hour5Image1, hour6Image1, hour7Image1, hour8Image1, hour9Image1, hour10Image1, hour11Image1, hour12Image1, hour13Image1, hour14Image1, hour15Image1, hour16Image1, hour17Image1, hour18Image1, hour19Image1, hour20Image1, hour21Image1, hour22Image1, hour23Image1, hour24Image1;
     @FXML
     CheckBox changeBox;
+    @FXML
+    LineChart trendGraph;
     Stage stage;
     Scene scene;
     Parent root;
@@ -320,6 +323,12 @@ public class MainController {
         temp21Label1.setText("" + weather.getForecast().getForecastday().get(0).getHour().get(20).getTemp_c() + "°C");
         temp22Label1.setText("" + weather.getForecast().getForecastday().get(0).getHour().get(21).getTemp_c() + "°C");
         temp23Label1.setText("" + weather.getForecast().getForecastday().get(0).getHour().get(22).getTemp_c() + "°C");
-        temp24Label1.setText("" + weather.getForecast().getForecastday().get(0).getHour().get(23).getTemp_c() + "°C");    }
+        temp24Label1.setText("" + weather.getForecast().getForecastday().get(0).getHour().get(23).getTemp_c() + "°C");
+    }
+    public void trendGraph() {
+        for (int i = 0; i < weather.getForecast().precipTrendMM().size(); i ++) {
+            trendGraph.getData().add(weather.getForecast().precipTrendMM().get(i));
+        }
+    }
 
 }

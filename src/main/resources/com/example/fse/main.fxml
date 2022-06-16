@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -644,6 +647,22 @@
             <content>
                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
+         </Tab>
+         <Tab text="Trends">
+           <content>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <LineChart fx:id="trendGraph" layoutX="88.0" layoutY="25.0" prefHeight="248.0" prefWidth="310.0">
+                       <xAxis>
+                         <CategoryAxis side="BOTTOM" />
+                       </xAxis>
+                       <yAxis>
+                         <NumberAxis side="LEFT" />
+                       </yAxis>
+                     </LineChart>
+                  </children>
+               </AnchorPane>
+           </content>
          </Tab>
      </tabs>
       <effect>

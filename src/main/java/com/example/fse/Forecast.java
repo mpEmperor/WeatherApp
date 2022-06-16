@@ -1,7 +1,6 @@
 package com.example.fse;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Forecast {
     private ArrayList<ForecastDay> forecastday;
