@@ -668,5 +668,8 @@
    <Line endX="499.0" layoutX="394.0" layoutY="346.0" startX="-1.199981689453125" stroke="#f2f1f1" />
    <Line endX="499.0" layoutX="395.0" layoutY="428.0" startX="-1.199981689453125" stroke="#f2f1f1" />
    <Button layoutX="394.0" layoutY="158.0" mnemonicParsing="false" onAction="#allData" prefHeight="26.0" prefWidth="484.0" text="All Data" />
-   <AnchorPane fx:id="dataPane" layoutX="162.0" layoutY="126.0" prefHeight="348.0" prefWidth="507.0" visible="false" />
+   <AnchorPane fx:id="dataPane" layoutX="162.0" layoutY="126.0" prefHeight="348.0" prefWidth="507.0" visible="false">
+      <children>
+         <Button layoutX="226.0" layoutY="309.0" mnemonicParsing="false" onAction="#exitData" text="Exit" />
+      </children></AnchorPane>
 </AnchorPane>
