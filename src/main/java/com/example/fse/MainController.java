@@ -51,10 +51,19 @@ public class MainController {
     public static void setWeather(Weather weather) {
         MainController.weather = weather;
     }
+
+    // Display all data pane
     public void allData() {
         dataPane.setVisible(true);
         dataPane.setBackground(new Background(new BackgroundFill(Color.rgb(0, 0, 1, 0.5), null, null)));
     }
+
+    // Hide data pane
+    public void exitData() {
+        dataPane.setVisible(false);
+    }
+
+    // Plot trend data
     public void plotData() {
         XYChart.Series<Number, Number> series = new XYChart.Series();
         if (radioPrecip.isSelected()) {
@@ -82,6 +91,8 @@ public class MainController {
             trendGraph.getData().add(series);
         }
     }
+
+    // Called when city is entered
     public void initialize() {
         String time = weather.getLocation().getLocaltime().split(" ")[1];
         int hour = Integer.parseInt(time.split(":")[0]);
@@ -151,6 +162,8 @@ public class MainController {
 
         System.out.println(weather.getForecast().getAverageCelsius());
     }
+
+    // Changing all units to imperial
     public void changeToF() {
         if (changeBox.isSelected()) {
             isImperial = true;
@@ -181,6 +194,11 @@ public class MainController {
             temp22Label.setText("" + weather.getForecast().getForecastday().get(1).getHour().get(21).getTemp_f() + "°F");
             temp23Label.setText("" + weather.getForecast().getForecastday().get(1).getHour().get(22).getTemp_f() + "°F");
             temp24Label.setText("" + weather.getForecast().getForecastday().get(1).getHour().get(23).getTemp_f() + "°F");
+            tempHigh.setText("H: "+ weather.getForecast().getForecastday().get(0).getDay().getMaxtemp_f() + "°F");
+            tempLow.setText("L: "+ weather.getForecast().getForecastday().get(0).getDay().getMintemp_f() + "°F");
+
+            visibilityLabel.setText("" + weather.getCurrent().getVis_miles() + "miles");
+            precipitationLabel.setText(""+ weather.getCurrent().getPrecip_in() + "in");
 
         } else {
             isImperial = false;
@@ -211,8 +229,15 @@ public class MainController {
             temp22Label.setText("" + weather.getForecast().getForecastday().get(1).getHour().get(21).getTemp_c() + "°C");
             temp23Label.setText("" + weather.getForecast().getForecastday().get(1).getHour().get(22).getTemp_c() + "°C");
             temp24Label.setText("" + weather.getForecast().getForecastday().get(1).getHour().get(23).getTemp_c() + "°C");
+            tempHigh.setText("H: "+ weather.getForecast().getForecastday().get(0).getDay().getMaxtemp_c() + "°C");
+            tempLow.setText("L: "+ weather.getForecast().getForecastday().get(0).getDay().getMintemp_c() + "°C");
+
+            visibilityLabel.setText("" + weather.getCurrent().getVis_km() + "km");
+            precipitationLabel.setText(""+ weather.getCurrent().getPrecip_mm() + "mm");
         }
     }
+
+    // Going back to choose city screen
     public void chooseCity(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("cityenter.fxml")));
         scene = new Scene(root);

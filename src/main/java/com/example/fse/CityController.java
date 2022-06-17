@@ -26,6 +26,7 @@ public class CityController {
     Scene scene;
     Stage stage;
     public void enteredCity(ActionEvent event) throws IOException, InterruptedException {
+        // If city contains space, change the space to underscore
         String city = cityField.getText();
         if (city.contains(" ")) {
             city = city.replaceAll(" ", "_");
@@ -42,14 +43,15 @@ public class CityController {
         Weather weather = new Gson().fromJson(response.body(), Weather.class);
         MainController.setWeather(weather);
 
-        //try {
+        // If city causes an error, just say invalid city
+        try {
             root = FXMLLoader.load(getClass().getResource("main.fxml"));
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-        //} catch (Exception e) {
-           //invalidLabel.setVisible(true);
-        //}
+        } catch (Exception e) {
+            invalidLabel.setVisible(true);
+        }
     }
 }

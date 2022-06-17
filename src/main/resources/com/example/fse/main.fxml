@@ -705,5 +705,6 @@
                <Font name="Microsoft Sans Serif" size="18.0" />
             </font>
          </Label>
+         <Button layoutX="253.0" layoutY="293.0" mnemonicParsing="false" onAction="#exitData" text="Exit" />
       </children></AnchorPane>
 </AnchorPane>
