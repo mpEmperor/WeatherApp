@@ -10,9 +10,13 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,7 +24,7 @@ import java.util.Objects;
 
 public class MainController {
     @FXML
-    AnchorPane anchorPane;
+    AnchorPane anchorPane, dataPane;
     @FXML
     Label tempLabel, timeLabel, locationLabel,countryLabel, windLabel, humidityLabel, pressureLabel,uvLabel, conditionLabel,LastUpdatedLabel,feelsLikeLabel, date, hour1Label, hour2Label, hour3Label, hour4Label, hour5Label, hour6Label, hour7Label, hour8Label, hour9Label, hour10Label, hour11Label, hour12Label, hour13Label, hour14Label, hour15Label, hour16Label, hour17Label, hour18Label, hour19Label, hour20Label, hour21Label, hour22Label, hour23Label, hour24Label,temp1Label, temp2Label, temp3Label, temp4Label, temp5Label, temp6Label, temp7Label, temp8Label, temp9Label, temp10Label, temp11Label, temp12Label, temp13Label, temp14Label, temp15Label, temp16Label, temp17Label, temp18Label, temp19Label, temp20Label, temp21Label, temp22Label, temp23Label, temp24Label, temp1Label1, temp2Label1, temp3Label1, temp4Label1, temp5Label1, temp6Label1, temp7Label1, temp8Label1, temp9Label1, temp10Label1, temp11Label1, temp12Label1, temp13Label1, temp14Label1, temp15Label1, temp16Label1, temp17Label1, temp18Label1, temp19Label1, temp20Label1, temp21Label1, temp22Label1, temp23Label1, temp24Label1, hour1Label1, hour2Label1, hour3Label1, hour4Label1, hour5Label1, hour6Label1, hour7Label1, hour8Label1, hour9Label1, hour10Label1, hour11Label1, hour12Label1, hour13Label1, hour14Label1, hour15Label1, hour16Label1, hour17Label1, hour18Label1, hour19Label1, hour20Label1, hour21Label1, hour22Label1, hour23Label1, hour24Label1;
     @FXML
@@ -29,9 +33,12 @@ public class MainController {
     CheckBox changeBox;
     @FXML
     LineChart trendGraph;
+    @FXML
+    RadioButton radioPrecip, radioTemp;
     Stage stage;
     Scene scene;
     Parent root;
+    boolean isImperial;
 
 
     private static Weather weather;
@@ -44,14 +51,38 @@ public class MainController {
     public static void setWeather(Weather weather) {
         MainController.weather = weather;
     }
-    public void initialize() {
+    public void allData() {
+        dataPane.setVisible(true);
+        dataPane.setBackground(new Background(new BackgroundFill(Color.rgb(0, 0, 1, 0.5), null, null)));
+    }
+    public void plotData() {
         XYChart.Series<Number, Number> series = new XYChart.Series();
-        series.setName("Precipitation");
-        for (int i = 0; i < weather.getForecast().precipTrendMM().size(); i ++) {
-            series.getData().add(new XYChart.Data<>(i, Math.round(weather.getForecast().precipTrendMM().get(i))));
+        if (radioPrecip.isSelected()) {
+            trendGraph.getData().clear();
+            series.setName("Precipitation");
+            for (int i = 0; i < weather.getForecast().precipTrendMM().size(); i ++) {
+                if (isImperial) {
+                    series.getData().add(new XYChart.Data<>(i, Math.round(weather.getForecast().precipTrendIN().get(i))));
+                } else {
+                    series.getData().add(new XYChart.Data<>(i, Math.round(weather.getForecast().precipTrendMM().get(i))));
+                }
+            }
+            trendGraph.getData().add(series);
+        } else if (radioTemp.isSelected()) {
+            trendGraph.getData().clear();
+            series = new XYChart.Series();
+            series.setName("Temperature");
+            for (int i = 0; i < weather.getForecast().tempTrendC().size(); i ++) {
+                if (isImperial) {
+                    series.getData().add(new XYChart.Data<>(i, Math.round(weather.getForecast().tempTrendF().get(i))));
+                } else {
+                    series.getData().add(new XYChart.Data<>(i, Math.round(weather.getForecast().tempTrendC().get(i))));
+                }
+            }
+            trendGraph.getData().add(series);
         }
-        trendGraph.getData().add(series);
-
+    }
+    public void initialize() {
         String time = weather.getLocation().getLocaltime().split(" ")[1];
         int hour = Integer.parseInt(time.split(":")[0]);
         if (hour > 12) {
@@ -116,6 +147,7 @@ public class MainController {
     }
     public void changeToF() {
         if (changeBox.isSelected()) {
+            isImperial = true;
             tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_f()).concat("°F"));
             feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_f() + "°F");
             windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_mph() + " mph");
@@ -145,6 +177,7 @@ public class MainController {
             temp24Label.setText("" + weather.getForecast().getForecastday().get(1).getHour().get(23).getTemp_f() + "°F");
 
         } else {
+            isImperial = false;
             tempLabel.setText(String.valueOf(weather.getCurrent().getTemp_c()).concat("°C"));
             feelsLikeLabel.setText("Feels Like: " + weather.getCurrent().getFeelslike_c() + "°C");
             windLabel.setText(weather.getCurrent().getWind_dir() + System.lineSeparator() + weather.getCurrent().getWind_kph() + " kph");

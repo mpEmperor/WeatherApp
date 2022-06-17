@@ -31,7 +31,7 @@ public class Forecast {
     public ArrayList<Float> precipTrendIN() {
         ArrayList<Float> precipData = new ArrayList<Float>();
         for (int i = 0; i < forecastday.size(); i ++) {
-            for (int j = 0; j < forecastday.get(i).getHour().size(); i ++) {
+            for (int j = 0; j < forecastday.get(i).getHour().size(); j ++) {
                 precipData.add(forecastday.get(i).getHour().get(j).getPrecip_in());
             }
         }
@@ -40,7 +40,7 @@ public class Forecast {
     public ArrayList<Float> tempTrendC() {
         ArrayList<Float> tempData = new ArrayList<Float>();
         for (int i = 0; i < forecastday.size(); i ++) {
-            for (int j = 0; j < forecastday.get(i).getHour().size(); i ++) {
+            for (int j = 0; j < forecastday.get(i).getHour().size(); j ++) {
                 tempData.add(forecastday.get(i).getHour().get(j).getTemp_c());
             }
         }
@@ -49,7 +49,7 @@ public class Forecast {
     public ArrayList<Float> tempTrendF() {
         ArrayList<Float> tempData = new ArrayList<Float>();
         for (int i = 0; i < forecastday.size(); i ++) {
-            for (int j = 0; j < forecastday.get(i).getHour().size(); i ++) {
+            for (int j = 0; j < forecastday.get(i).getHour().size(); j ++) {
                 tempData.add(forecastday.get(i).getHour().get(j).getTemp_f());
             }
         }

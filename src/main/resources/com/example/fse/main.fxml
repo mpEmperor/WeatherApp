@@ -6,8 +6,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -47,9 +49,8 @@
          <Font name="Microsoft Sans Serif" size="18.0" />
       </font>
    </Label>
-   <ImageView fx:id="humidityImage1" fitHeight="73.0" fitWidth="71.0" layoutX="525.0" layoutY="74.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@humidity1.png"/>
+   <ImageView fx:id="humidityImage1" fitHeight="73.0" fitWidth="71.0" layoutX="525.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@humidity1.png" />
    </ImageView>
    <Label fx:id="countryLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="158.0" prefHeight="42.0" prefWidth="282.0" text="Country" textAlignment="CENTER" textFill="WHITE">
       <font>
@@ -59,9 +60,8 @@
    <Label fx:id="conditionLabel" alignment="CENTER" layoutX="106.0" layoutY="358.0" prefHeight="18.0" prefWidth="200.0" text="Condition" textAlignment="CENTER" textFill="WHITE" />
    <Label fx:id="LastUpdatedLabel" alignment="CENTER" layoutX="101.0" layoutY="490.0" prefHeight="18.0" prefWidth="200.0" text="LastUpdated" textAlignment="CENTER" textFill="WHITE" />
    <Label fx:id="feelsLikeLabel" alignment="CENTER" layoutX="106.0" layoutY="340.0" prefHeight="18.0" prefWidth="200.0" text="feelsLike" textAlignment="CENTER" textFill="WHITE" />
-   <ImageView fx:id="humidityImage2" fitHeight="36.0" fitWidth="24.0" layoutX="571.0" layoutY="101.0"
-              pickOnBounds="true" preserveRatio="true">
-      <Image url="@humidity2.png"/>
+   <ImageView fx:id="humidityImage2" fitHeight="36.0" fitWidth="24.0" layoutX="571.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@humidity2.png" />
    </ImageView>
    <ImageView fx:id="pressureImage" fitHeight="51.0" fitWidth="54.0" layoutX="670.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
    </ImageView>
@@ -77,396 +77,283 @@
          <Font name="Microsoft Sans Serif" size="18.0" />
       </font>
    </Label>
-   <ImageView fx:id="uvImage" fitHeight="71.0" fitWidth="79.0" layoutX="795.0" layoutY="89.0" pickOnBounds="true"
-              preserveRatio="true"></ImageView>
-   <TabPane layoutX="394.0" layoutY="206.0" prefHeight="329.0" prefWidth="499.0"
-            style="-fx-background-color: lightgray;" tabClosingPolicy="UNAVAILABLE">
+   <ImageView fx:id="uvImage" fitHeight="71.0" fitWidth="79.0" layoutX="795.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" />
+   <TabPane layoutX="394.0" layoutY="206.0" prefHeight="329.0" prefWidth="499.0" style="-fx-background-color: lightgray;" tabClosingPolicy="UNAVAILABLE">
       <effect>
-         <ColorAdjust brightness="-0.15"/>
+         <ColorAdjust brightness="-0.15" />
       </effect>
       <opaqueInsets>
-         <Insets/>
+         <Insets />
       </opaqueInsets>
       <Tab fx:id="HourlyTab1" text="Current Day Hourly">
          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <GridPane alignment="CENTER" layoutY="29.0" prefHeight="242.0" prefWidth="499.0" vgap="5.0">
                <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" minWidth="10.0" prefWidth="100.0"/>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                  <ColumnConstraints halignment="CENTER" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                </columnConstraints>
                <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES"/>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <opaqueInsets>
-                  <Insets/>
+                  <Insets />
                </opaqueInsets>
-               <Label fx:id="hour1Label1" alignment="CENTER" text="Hour" textAlignment="CENTER" textFill="#f2efef"/>
-               <Label fx:id="hour2Label1" alignment="CENTER" layoutX="26.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1"/>
-               <Label fx:id="hour3Label1" alignment="CENTER" layoutX="88.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2"/>
-               <Label fx:id="hour4Label1" alignment="CENTER" layoutX="152.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3"/>
-               <Label fx:id="hour5Label1" alignment="CENTER" layoutX="215.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4"/>
-               <Label fx:id="hour6Label1" alignment="CENTER" layoutX="278.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5"/>
-               <Label fx:id="hour7Label1" alignment="CENTER" layoutX="340.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6"/>
-               <Label fx:id="hour8Label1" alignment="CENTER" layoutX="404.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7"/>
-               <Label fx:id="hour9Label1" alignment="CENTER" layoutX="26.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.rowIndex="1"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour10Label1" alignment="CENTER" layoutX="88.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1" GridPane.rowIndex="1"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour11Label1" alignment="CENTER" layoutX="152.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2" GridPane.rowIndex="1"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour12Label1" alignment="CENTER" layoutX="215.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3" GridPane.rowIndex="1"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour13Label1" alignment="CENTER" layoutX="278.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4" GridPane.rowIndex="1"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour14Label1" alignment="CENTER" layoutX="340.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5" GridPane.rowIndex="1"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour15Label1" alignment="CENTER" layoutX="404.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6" GridPane.rowIndex="1"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour16Label1" alignment="CENTER" layoutX="467.0" layoutY="10.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7" GridPane.rowIndex="1"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour17Label1" alignment="CENTER" layoutX="26.0" layoutY="92.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.rowIndex="2"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour18Label1" alignment="CENTER" layoutX="88.0" layoutY="92.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1" GridPane.rowIndex="2"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour19Label1" alignment="CENTER" layoutX="152.0" layoutY="92.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2" GridPane.rowIndex="2"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour20Label1" alignment="CENTER" layoutX="215.0" layoutY="92.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3" GridPane.rowIndex="2"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour21Label1" alignment="CENTER" layoutX="278.0" layoutY="92.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4" GridPane.rowIndex="2"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour22Label1" alignment="CENTER" layoutX="340.0" layoutY="92.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5" GridPane.rowIndex="2"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour23Label1" alignment="CENTER" layoutX="404.0" layoutY="92.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6" GridPane.rowIndex="2"
-                      GridPane.valignment="TOP"/>
-               <Label fx:id="hour24Label1" alignment="CENTER" layoutX="467.0" layoutY="92.0" text="Hour"
-                      textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7" GridPane.rowIndex="2"
-                      GridPane.valignment="TOP"/>
-               <ImageView fx:id="hour1Image1" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true"
-                          preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour2Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1"
-                          GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour3Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
-                          GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour4Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3"
-                          GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour5Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4"
-                          GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour6Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5"
-                          GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour7Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6"
-                          GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour8Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7"
-                          GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour17Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="106.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2"/>
-               <ImageView fx:id="hour18Image1" fitHeight="45.0" fitWidth="45.0" layoutX="76.0" layoutY="106.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1"
-                          GridPane.rowIndex="2"/>
-               <ImageView fx:id="hour19Image1" fitHeight="45.0" fitWidth="45.0" layoutX="140.0" layoutY="106.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
-                          GridPane.rowIndex="2"/>
-               <ImageView fx:id="hour20Image1" fitHeight="45.0" fitWidth="45.0" layoutX="203.0" layoutY="106.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3"
-                          GridPane.rowIndex="2"/>
-               <ImageView fx:id="hour21Image1" fitHeight="45.0" fitWidth="45.0" layoutX="266.0" layoutY="106.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4"
-                          GridPane.rowIndex="2"/>
-               <ImageView fx:id="hour22Image1" fitHeight="45.0" fitWidth="45.0" layoutX="328.0" layoutY="106.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5"
-                          GridPane.rowIndex="2"/>
-               <ImageView fx:id="hour23Image1" fitHeight="45.0" fitWidth="45.0" layoutX="392.0" layoutY="106.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6"
-                          GridPane.rowIndex="2"/>
-               <ImageView fx:id="hour24Image1" fitHeight="45.0" fitWidth="45.0" layoutX="455.0" layoutY="106.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7"
-                          GridPane.rowIndex="2"/>
-               <Label fx:id="temp1Label1" layoutX="21.0" layoutY="58.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.valignment="BOTTOM">
+               <Label fx:id="hour1Label1" alignment="CENTER" text="Hour" textAlignment="CENTER" textFill="#f2efef" />
+               <Label fx:id="hour2Label1" alignment="CENTER" layoutX="26.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1" />
+               <Label fx:id="hour3Label1" alignment="CENTER" layoutX="88.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2" />
+               <Label fx:id="hour4Label1" alignment="CENTER" layoutX="152.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3" />
+               <Label fx:id="hour5Label1" alignment="CENTER" layoutX="215.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4" />
+               <Label fx:id="hour6Label1" alignment="CENTER" layoutX="278.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5" />
+               <Label fx:id="hour7Label1" alignment="CENTER" layoutX="340.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6" />
+               <Label fx:id="hour8Label1" alignment="CENTER" layoutX="404.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7" />
+               <Label fx:id="hour9Label1" alignment="CENTER" layoutX="26.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+               <Label fx:id="hour10Label1" alignment="CENTER" layoutX="88.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+               <Label fx:id="hour11Label1" alignment="CENTER" layoutX="152.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+               <Label fx:id="hour12Label1" alignment="CENTER" layoutX="215.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+               <Label fx:id="hour13Label1" alignment="CENTER" layoutX="278.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+               <Label fx:id="hour14Label1" alignment="CENTER" layoutX="340.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+               <Label fx:id="hour15Label1" alignment="CENTER" layoutX="404.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+               <Label fx:id="hour16Label1" alignment="CENTER" layoutX="467.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+               <Label fx:id="hour17Label1" alignment="CENTER" layoutX="26.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+               <Label fx:id="hour18Label1" alignment="CENTER" layoutX="88.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+               <Label fx:id="hour19Label1" alignment="CENTER" layoutX="152.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+               <Label fx:id="hour20Label1" alignment="CENTER" layoutX="215.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+               <Label fx:id="hour21Label1" alignment="CENTER" layoutX="278.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+               <Label fx:id="hour22Label1" alignment="CENTER" layoutX="340.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+               <Label fx:id="hour23Label1" alignment="CENTER" layoutX="404.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+               <Label fx:id="hour24Label1" alignment="CENTER" layoutX="467.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+               <ImageView fx:id="hour1Image1" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour2Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour3Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour4Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour5Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour6Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour7Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour8Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour17Image1" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+               <ImageView fx:id="hour18Image1" fitHeight="45.0" fitWidth="45.0" layoutX="76.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               <ImageView fx:id="hour19Image1" fitHeight="45.0" fitWidth="45.0" layoutX="140.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               <ImageView fx:id="hour20Image1" fitHeight="45.0" fitWidth="45.0" layoutX="203.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+               <ImageView fx:id="hour21Image1" fitHeight="45.0" fitWidth="45.0" layoutX="266.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+               <ImageView fx:id="hour22Image1" fitHeight="45.0" fitWidth="45.0" layoutX="328.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+               <ImageView fx:id="hour23Image1" fitHeight="45.0" fitWidth="45.0" layoutX="392.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+               <ImageView fx:id="hour24Image1" fitHeight="45.0" fitWidth="45.0" layoutX="455.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+               <Label fx:id="temp1Label1" layoutX="21.0" layoutY="58.0" text="Temp" textFill="#f4f1f1" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <GridPane.margin>
-                     <Insets/>
+                     <Insets />
                   </GridPane.margin>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp2Label1" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp2Label1" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp3Label1" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="2" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp3Label1" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="2" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp4Label1" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="3" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp4Label1" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="3" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp5Label1" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="4" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp5Label1" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="4" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp6Label1" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="5" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp6Label1" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="5" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp7Label1" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="6" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp7Label1" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="6" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp8Label1" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="7" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp8Label1" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="7" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp9Label1" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp9Label1" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp10Label1" layoutX="86.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp10Label1" layoutX="86.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp11Label1" layoutX="148.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp11Label1" layoutX="148.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp12Label1" layoutX="212.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp12Label1" layoutX="212.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp13Label1" layoutX="275.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp13Label1" layoutX="275.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp14Label1" layoutX="338.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp14Label1" layoutX="338.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp15Label1" layoutX="400.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp15Label1" layoutX="400.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp16Label1" layoutX="464.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="7" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp16Label1" layoutX="464.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="7" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp17Label1" layoutX="23.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp17Label1" layoutX="23.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp18Label1" layoutX="86.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp18Label1" layoutX="86.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp19Label1" layoutX="148.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp19Label1" layoutX="148.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp20Label1" layoutX="212.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp20Label1" layoutX="212.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp21Label1" layoutX="275.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp21Label1" layoutX="275.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp22Label1" layoutX="338.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp22Label1" layoutX="338.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp23Label1" layoutX="400.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp23Label1" layoutX="400.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <Label fx:id="temp24Label1" layoutX="464.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                      GridPane.columnIndex="7" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <Label fx:id="temp24Label1" layoutX="464.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="7" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                   <font>
-                     <Font name="Microsoft Sans Serif" size="12.0"/>
+                     <Font name="Microsoft Sans Serif" size="12.0" />
                   </font>
                   <padding>
-                     <Insets bottom="1.0" right="1.0" top="10.0"/>
+                     <Insets bottom="1.0" right="1.0" top="10.0" />
                   </padding>
                </Label>
-               <ImageView fx:id="hour9Image1" fitHeight="45.0" fitWidth="45.0" layoutX="16.0" layoutY="27.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1"
-                          GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour10Image1" fitHeight="45.0" fitWidth="45.0" layoutX="79.0" layoutY="27.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1"
-                          GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour11Image1" fitHeight="45.0" fitWidth="45.0" layoutX="142.0" layoutY="27.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
-                          GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour12Image1" fitHeight="45.0" fitWidth="45.0" layoutX="205.0" layoutY="27.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3"
-                          GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour13Image1" fitHeight="45.0" fitWidth="45.0" layoutX="268.0" layoutY="27.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4"
-                          GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour14Image1" fitHeight="45.0" fitWidth="45.0" layoutX="331.0" layoutY="27.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5"
-                          GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour15Image1" fitHeight="45.0" fitWidth="45.0" layoutX="394.0" layoutY="27.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6"
-                          GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour16Image1" fitHeight="45.0" fitWidth="45.0" layoutX="457.0" layoutY="27.0"
-                          pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7"
-                          GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-               <ImageView fx:id="hour3Image11" fitHeight="45.0" fitWidth="45.0" layoutX="142.0" layoutY="27.0"
-                          pickOnBounds="true" preserveRatio="true"/>
+               <ImageView fx:id="hour9Image1" fitHeight="45.0" fitWidth="45.0" layoutX="16.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour10Image1" fitHeight="45.0" fitWidth="45.0" layoutX="79.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour11Image1" fitHeight="45.0" fitWidth="45.0" layoutX="142.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour12Image1" fitHeight="45.0" fitWidth="45.0" layoutX="205.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour13Image1" fitHeight="45.0" fitWidth="45.0" layoutX="268.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour14Image1" fitHeight="45.0" fitWidth="45.0" layoutX="331.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour15Image1" fitHeight="45.0" fitWidth="45.0" layoutX="394.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour16Image1" fitHeight="45.0" fitWidth="45.0" layoutX="457.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+               <ImageView fx:id="hour3Image11" fitHeight="45.0" fitWidth="45.0" layoutX="142.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
             </GridPane>
-            <Label fx:id="date1" layoutX="11.0" prefHeight="30.0" prefWidth="154.0" text="Date"
-                   textFill="#efeaea">
+            <Label fx:id="date1" layoutX="11.0" prefHeight="30.0" prefWidth="154.0" text="Date" textFill="#efeaea">
                <font>
-                  <Font name="Microsoft Sans Serif" size="18.0"/>
+                  <Font name="Microsoft Sans Serif" size="18.0" />
                </font>
             </Label>
          </AnchorPane>
@@ -477,382 +364,272 @@
               <children>
                  <GridPane alignment="CENTER" layoutY="29.0" prefHeight="242.0" prefWidth="499.0" vgap="5.0">
                     <columnConstraints>
-                       <ColumnConstraints halignment="CENTER" minWidth="10.0" prefWidth="100.0"/>
-                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                       <ColumnConstraints halignment="CENTER" minWidth="10.0" prefWidth="100.0" />
+                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
-                       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES"/>
-                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <opaqueInsets>
-                       <Insets/>
+                       <Insets />
                     </opaqueInsets>
                     <children>
-                       <Label fx:id="hour1Label" alignment="CENTER" text="Hour" textAlignment="CENTER"
-                              textFill="#f2efef"/>
-                       <Label fx:id="hour2Label" alignment="CENTER" layoutX="26.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1"/>
-                       <Label fx:id="hour3Label" alignment="CENTER" layoutX="88.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2"/>
-                       <Label fx:id="hour4Label" alignment="CENTER" layoutX="152.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3"/>
-                       <Label fx:id="hour5Label" alignment="CENTER" layoutX="215.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4"/>
-                       <Label fx:id="hour6Label" alignment="CENTER" layoutX="278.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5"/>
-                       <Label fx:id="hour7Label" alignment="CENTER" layoutX="340.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6"/>
-                       <Label fx:id="hour8Label" alignment="CENTER" layoutX="404.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7"/>
-                       <Label fx:id="hour9Label" alignment="CENTER" layoutX="26.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.rowIndex="1"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour10Label" alignment="CENTER" layoutX="88.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1" GridPane.rowIndex="1"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour11Label" alignment="CENTER" layoutX="152.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2" GridPane.rowIndex="1"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour12Label" alignment="CENTER" layoutX="215.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3" GridPane.rowIndex="1"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour13Label" alignment="CENTER" layoutX="278.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4" GridPane.rowIndex="1"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour14Label" alignment="CENTER" layoutX="340.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5" GridPane.rowIndex="1"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour15Label" alignment="CENTER" layoutX="404.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6" GridPane.rowIndex="1"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour16Label" alignment="CENTER" layoutX="467.0" layoutY="10.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7" GridPane.rowIndex="1"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour17Label" alignment="CENTER" layoutX="26.0" layoutY="92.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.rowIndex="2"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour18Label" alignment="CENTER" layoutX="88.0" layoutY="92.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1" GridPane.rowIndex="2"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour19Label" alignment="CENTER" layoutX="152.0" layoutY="92.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2" GridPane.rowIndex="2"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour20Label" alignment="CENTER" layoutX="215.0" layoutY="92.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3" GridPane.rowIndex="2"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour21Label" alignment="CENTER" layoutX="278.0" layoutY="92.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4" GridPane.rowIndex="2"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour22Label" alignment="CENTER" layoutX="340.0" layoutY="92.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5" GridPane.rowIndex="2"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour23Label" alignment="CENTER" layoutX="404.0" layoutY="92.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6" GridPane.rowIndex="2"
-                              GridPane.valignment="TOP"/>
-                       <Label fx:id="hour24Label" alignment="CENTER" layoutX="467.0" layoutY="92.0" text="Hour"
-                              textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7" GridPane.rowIndex="2"
-                              GridPane.valignment="TOP"/>
-                       <ImageView fx:id="hour1Image" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true"
-                                  preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour2Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1"
-                                  GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour3Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
-                                  GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour4Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3"
-                                  GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour5Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4"
-                                  GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour6Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5"
-                                  GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour7Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6"
-                                  GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour8Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7"
-                                  GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour17Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="106.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2"/>
-                       <ImageView fx:id="hour18Image" fitHeight="45.0" fitWidth="45.0" layoutX="76.0" layoutY="106.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1"
-                                  GridPane.rowIndex="2"/>
-                       <ImageView fx:id="hour19Image" fitHeight="45.0" fitWidth="45.0" layoutX="140.0" layoutY="106.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
-                                  GridPane.rowIndex="2"/>
-                       <ImageView fx:id="hour20Image" fitHeight="45.0" fitWidth="45.0" layoutX="203.0" layoutY="106.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3"
-                                  GridPane.rowIndex="2"/>
-                       <ImageView fx:id="hour21Image" fitHeight="45.0" fitWidth="45.0" layoutX="266.0" layoutY="106.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4"
-                                  GridPane.rowIndex="2"/>
-                       <ImageView fx:id="hour22Image" fitHeight="45.0" fitWidth="45.0" layoutX="328.0" layoutY="106.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5"
-                                  GridPane.rowIndex="2"/>
-                       <ImageView fx:id="hour23Image" fitHeight="45.0" fitWidth="45.0" layoutX="392.0" layoutY="106.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6"
-                                  GridPane.rowIndex="2"/>
-                       <ImageView fx:id="hour24Image" fitHeight="45.0" fitWidth="45.0" layoutX="455.0" layoutY="106.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7"
-                                  GridPane.rowIndex="2"/>
-                       <Label fx:id="temp1Label" layoutX="21.0" layoutY="58.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.valignment="BOTTOM">
+                       <Label fx:id="hour1Label" alignment="CENTER" text="Hour" textAlignment="CENTER" textFill="#f2efef" />
+                       <Label fx:id="hour2Label" alignment="CENTER" layoutX="26.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1" />
+                       <Label fx:id="hour3Label" alignment="CENTER" layoutX="88.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2" />
+                       <Label fx:id="hour4Label" alignment="CENTER" layoutX="152.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3" />
+                       <Label fx:id="hour5Label" alignment="CENTER" layoutX="215.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4" />
+                       <Label fx:id="hour6Label" alignment="CENTER" layoutX="278.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5" />
+                       <Label fx:id="hour7Label" alignment="CENTER" layoutX="340.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6" />
+                       <Label fx:id="hour8Label" alignment="CENTER" layoutX="404.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7" />
+                       <Label fx:id="hour9Label" alignment="CENTER" layoutX="26.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                       <Label fx:id="hour10Label" alignment="CENTER" layoutX="88.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                       <Label fx:id="hour11Label" alignment="CENTER" layoutX="152.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                       <Label fx:id="hour12Label" alignment="CENTER" layoutX="215.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                       <Label fx:id="hour13Label" alignment="CENTER" layoutX="278.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                       <Label fx:id="hour14Label" alignment="CENTER" layoutX="340.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                       <Label fx:id="hour15Label" alignment="CENTER" layoutX="404.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                       <Label fx:id="hour16Label" alignment="CENTER" layoutX="467.0" layoutY="10.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                       <Label fx:id="hour17Label" alignment="CENTER" layoutX="26.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                       <Label fx:id="hour18Label" alignment="CENTER" layoutX="88.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                       <Label fx:id="hour19Label" alignment="CENTER" layoutX="152.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                       <Label fx:id="hour20Label" alignment="CENTER" layoutX="215.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                       <Label fx:id="hour21Label" alignment="CENTER" layoutX="278.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                       <Label fx:id="hour22Label" alignment="CENTER" layoutX="340.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                       <Label fx:id="hour23Label" alignment="CENTER" layoutX="404.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                       <Label fx:id="hour24Label" alignment="CENTER" layoutX="467.0" layoutY="92.0" text="Hour" textAlignment="CENTER" textFill="#f2efef" GridPane.columnIndex="7" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                       <ImageView fx:id="hour1Image" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour2Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour3Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour4Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour5Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour6Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour7Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour8Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour17Image" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+                       <ImageView fx:id="hour18Image" fitHeight="45.0" fitWidth="45.0" layoutX="76.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                       <ImageView fx:id="hour19Image" fitHeight="45.0" fitWidth="45.0" layoutX="140.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                       <ImageView fx:id="hour20Image" fitHeight="45.0" fitWidth="45.0" layoutX="203.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                       <ImageView fx:id="hour21Image" fitHeight="45.0" fitWidth="45.0" layoutX="266.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                       <ImageView fx:id="hour22Image" fitHeight="45.0" fitWidth="45.0" layoutX="328.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                       <ImageView fx:id="hour23Image" fitHeight="45.0" fitWidth="45.0" layoutX="392.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                       <ImageView fx:id="hour24Image" fitHeight="45.0" fitWidth="45.0" layoutX="455.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                       <Label fx:id="temp1Label" layoutX="21.0" layoutY="58.0" text="Temp" textFill="#f4f1f1" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <GridPane.margin>
-                             <Insets/>
+                             <Insets />
                           </GridPane.margin>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp2Label" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp2Label" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp3Label" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="2" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp3Label" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="2" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp4Label" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="3" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp4Label" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="3" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp5Label" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="4" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp5Label" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="4" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp6Label" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="5" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp6Label" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="5" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp7Label" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="6" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp7Label" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="6" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp8Label" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="7" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp8Label" layoutX="23.0" layoutY="10.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="7" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp9Label" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp9Label" layoutX="23.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp10Label" layoutX="86.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp10Label" layoutX="86.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp11Label" layoutX="148.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp11Label" layoutX="148.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp12Label" layoutX="212.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp12Label" layoutX="212.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp13Label" layoutX="275.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp13Label" layoutX="275.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp14Label" layoutX="338.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp14Label" layoutX="338.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp15Label" layoutX="400.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp15Label" layoutX="400.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp16Label" layoutX="464.0" layoutY="61.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="7" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp16Label" layoutX="464.0" layoutY="61.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="7" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp17Label" layoutX="23.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp17Label" layoutX="23.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp18Label" layoutX="86.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp18Label" layoutX="86.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp19Label" layoutX="148.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp19Label" layoutX="148.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp20Label" layoutX="212.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp20Label" layoutX="212.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp21Label" layoutX="275.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp21Label" layoutX="275.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp22Label" layoutX="338.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp22Label" layoutX="338.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="5" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp23Label" layoutX="400.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp23Label" layoutX="400.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="6" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <Label fx:id="temp24Label" layoutX="464.0" layoutY="144.0" text="Temp" textFill="#f4f1f1"
-                              GridPane.columnIndex="7" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                       <Label fx:id="temp24Label" layoutX="464.0" layoutY="144.0" text="Temp" textFill="#f4f1f1" GridPane.columnIndex="7" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                           <font>
-                             <Font name="Microsoft Sans Serif" size="12.0"/>
+                             <Font name="Microsoft Sans Serif" size="12.0" />
                           </font>
                           <padding>
-                             <Insets bottom="1.0" right="1.0" top="10.0"/>
+                             <Insets bottom="1.0" right="1.0" top="10.0" />
                           </padding>
                        </Label>
-                       <ImageView fx:id="hour9Image" fitHeight="45.0" fitWidth="45.0" layoutX="16.0" layoutY="27.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1"
-                                  GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour10Image" fitHeight="45.0" fitWidth="45.0" layoutX="79.0" layoutY="27.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1"
-                                  GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour11Image" fitHeight="45.0" fitWidth="45.0" layoutX="142.0" layoutY="27.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
-                                  GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour12Image" fitHeight="45.0" fitWidth="45.0" layoutX="205.0" layoutY="27.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3"
-                                  GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour13Image" fitHeight="45.0" fitWidth="45.0" layoutX="268.0" layoutY="27.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4"
-                                  GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour14Image" fitHeight="45.0" fitWidth="45.0" layoutX="331.0" layoutY="27.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5"
-                                  GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour15Image" fitHeight="45.0" fitWidth="45.0" layoutX="394.0" layoutY="27.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6"
-                                  GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
-                       <ImageView fx:id="hour16Image" fitHeight="45.0" fitWidth="45.0" layoutX="457.0" layoutY="27.0"
-                                  pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7"
-                                  GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+                       <ImageView fx:id="hour9Image" fitHeight="45.0" fitWidth="45.0" layoutX="16.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour10Image" fitHeight="45.0" fitWidth="45.0" layoutX="79.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour11Image" fitHeight="45.0" fitWidth="45.0" layoutX="142.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour12Image" fitHeight="45.0" fitWidth="45.0" layoutX="205.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour13Image" fitHeight="45.0" fitWidth="45.0" layoutX="268.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour14Image" fitHeight="45.0" fitWidth="45.0" layoutX="331.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour15Image" fitHeight="45.0" fitWidth="45.0" layoutX="394.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                       <ImageView fx:id="hour16Image" fitHeight="45.0" fitWidth="45.0" layoutX="457.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                     </children>
                  </GridPane>
                  <Label fx:id="date" layoutX="11.0" prefHeight="30.0" prefWidth="154.0" text="Date" textFill="#efeaea">
                     <font>
-                       <Font name="Microsoft Sans Serif" size="18.0"/>
+                       <Font name="Microsoft Sans Serif" size="18.0" />
                     </font>
                  </Label>
               </children>
@@ -861,7 +638,7 @@
       </Tab>
       <Tab fx:id="DaysTab" text="Next 3 Days ">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
          </content>
       </Tab>
       <Tab text="Trends">
@@ -870,12 +647,19 @@
                <children>
                   <LineChart fx:id="trendGraph" layoutX="88.0" layoutY="25.0" prefHeight="248.0" prefWidth="310.0">
                      <xAxis>
-                        <NumberAxis side="BOTTOM"/>
+                        <NumberAxis side="BOTTOM" />
                      </xAxis>
                      <yAxis>
-                        <NumberAxis side="LEFT"/>
+                        <NumberAxis side="LEFT" />
                      </yAxis>
                   </LineChart>
+                  <RadioButton fx:id="radioPrecip" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" selected="true" text="Precipitation">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="radioTrend" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioTemp" layoutX="14.0" layoutY="44.0" mnemonicParsing="false" text="Temperature" toggleGroup="$radioTrend" />
+                  <Button layoutX="35.0" layoutY="73.0" mnemonicParsing="false" onAction="#plotData" text="Apply" />
                </children>
             </AnchorPane>
          </content>
@@ -883,4 +667,6 @@
    </TabPane>
    <Line endX="499.0" layoutX="394.0" layoutY="346.0" startX="-1.199981689453125" stroke="#f2f1f1" />
    <Line endX="499.0" layoutX="395.0" layoutY="428.0" startX="-1.199981689453125" stroke="#f2f1f1" />
+   <Button layoutX="394.0" layoutY="158.0" mnemonicParsing="false" onAction="#allData" prefHeight="26.0" prefWidth="484.0" text="All Data" />
+   <AnchorPane fx:id="dataPane" layoutX="162.0" layoutY="126.0" prefHeight="348.0" prefWidth="507.0" visible="false" />
 </AnchorPane>
