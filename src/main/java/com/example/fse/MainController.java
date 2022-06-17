@@ -26,7 +26,7 @@ public class MainController {
     @FXML
     AnchorPane anchorPane, dataPane;
     @FXML
-    Label tempLabel, timeLabel, locationLabel,countryLabel, windLabel, date1, humidityLabel, pressureLabel,uvLabel, conditionLabel,LastUpdatedLabel,feelsLikeLabel, date, hour1Label, hour2Label, hour3Label, hour4Label, hour5Label, hour6Label, hour7Label, hour8Label, hour9Label, hour10Label, hour11Label, hour12Label, hour13Label, hour14Label, hour15Label, hour16Label, hour17Label, hour18Label, hour19Label, hour20Label, hour21Label, hour22Label, hour23Label, hour24Label,temp1Label, temp2Label, temp3Label, temp4Label, temp5Label, temp6Label, temp7Label, temp8Label, temp9Label, temp10Label, temp11Label, temp12Label, temp13Label, temp14Label, temp15Label, temp16Label, temp17Label, temp18Label, temp19Label, temp20Label, temp21Label, temp22Label, temp23Label, temp24Label, temp1Label1, temp2Label1, temp3Label1, temp4Label1, temp5Label1, temp6Label1, temp7Label1, temp8Label1, temp9Label1, temp10Label1, temp11Label1, temp12Label1, temp13Label1, temp14Label1, temp15Label1, temp16Label1, temp17Label1, temp18Label1, temp19Label1, temp20Label1, temp21Label1, temp22Label1, temp23Label1, temp24Label1, hour1Label1, hour2Label1, hour3Label1, hour4Label1, hour5Label1, hour6Label1, hour7Label1, hour8Label1, hour9Label1, hour10Label1, hour11Label1, hour12Label1, hour13Label1, hour14Label1, hour15Label1, hour16Label1, hour17Label1, hour18Label1, hour19Label1, hour20Label1, hour21Label1, hour22Label1, hour23Label1, hour24Label1;
+    Label tempLabel, tempHigh, tempLow, timeLabel, locationLabel,countryLabel, windLabel, humidityLabel, pressureLabel,uvLabel, conditionLabel,LastUpdatedLabel,feelsLikeLabel, date, hour1Label, hour2Label, hour3Label, hour4Label, hour5Label, hour6Label, hour7Label, hour8Label, hour9Label, hour10Label, hour11Label, hour12Label, hour13Label, hour14Label, hour15Label, hour16Label, hour17Label, hour18Label, hour19Label, hour20Label, hour21Label, hour22Label, hour23Label, hour24Label,temp1Label, temp2Label, temp3Label, temp4Label, temp5Label, temp6Label, temp7Label, temp8Label, temp9Label, temp10Label, temp11Label, temp12Label, temp13Label, temp14Label, temp15Label, temp16Label, temp17Label, temp18Label, temp19Label, temp20Label, temp21Label, temp22Label, temp23Label, temp24Label, temp1Label1, temp2Label1, temp3Label1, temp4Label1, temp5Label1, temp6Label1, temp7Label1, temp8Label1, temp9Label1, temp10Label1, temp11Label1, temp12Label1, temp13Label1, temp14Label1, temp15Label1, temp16Label1, temp17Label1, temp18Label1, temp19Label1, temp20Label1, temp21Label1, temp22Label1, temp23Label1, temp24Label1, hour1Label1, hour2Label1, hour3Label1, hour4Label1, hour5Label1, hour6Label1, hour7Label1, hour8Label1, hour9Label1, hour10Label1, hour11Label1, hour12Label1, hour13Label1, hour14Label1, hour15Label1, hour16Label1, hour17Label1, hour18Label1, hour19Label1, hour20Label1, hour21Label1, hour22Label1, hour23Label1, hour24Label1;
     @FXML
     ImageView imageView, bgImageView, windImage, humidityImage1, humidityImage2, pressureImage, uvImage, hour1Image, hour2Image, hour3Image, hour4Image, hour5Image, hour6Image, hour7Image, hour8Image, hour9Image, hour10Image, hour11Image, hour12Image, hour13Image, hour14Image, hour15Image, hour16Image, hour17Image, hour18Image, hour19Image, hour20Image, hour21Image, hour22Image, hour23Image, hour24Image, hour1Image1, hour2Image1, hour3Image1, hour4Image1, hour5Image1, hour6Image1, hour7Image1, hour8Image1, hour9Image1, hour10Image1, hour11Image1, hour12Image1, hour13Image1, hour14Image1, hour15Image1, hour16Image1, hour17Image1, hour18Image1, hour19Image1, hour20Image1, hour21Image1, hour22Image1, hour23Image1, hour24Image1;
     @FXML
@@ -54,9 +54,6 @@ public class MainController {
     public void allData() {
         dataPane.setVisible(true);
         dataPane.setBackground(new Background(new BackgroundFill(Color.rgb(0, 0, 1, 0.5), null, null)));
-    }
-    public void exitData() {
-        dataPane.setVisible(false);
     }
     public void plotData() {
         XYChart.Series<Number, Number> series = new XYChart.Series();
@@ -145,6 +142,8 @@ public class MainController {
 
         imageView.setImage(new Image("http://"+weather.getCurrent().getCondition().getIcon().substring(2)));
 
+        tempHigh.setText("H: "+ weather.getForecast().getForecastday().get(0).getDay().getMaxtemp_c() + "°C");
+        tempLow.setText("L: "+ weather.getForecast().getForecastday().get(0).getDay().getMintemp_c() + "°C");
 
         System.out.println(weather.getForecast().getAverageCelsius());
     }
